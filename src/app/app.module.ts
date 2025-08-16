@@ -9,6 +9,8 @@ import { BannerComponent } from './shared/banner/banner.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { ContainerComponent } from './shared/container/container.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     FooterComponent,
     BannerComponent,
+    ContainerComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
