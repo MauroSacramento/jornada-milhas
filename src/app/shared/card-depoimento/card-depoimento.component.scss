@@ -1,0 +1,22 @@
+.depoimento{
+  max-width: 320px;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background-color: #FEF7FF;
+  margin-bottom: 40px;
+
+  img {
+    max-width: 3.5rem;
+  }
+  &.avis{
+    p{
+      color: #49454F;
+    }
+    span {
+      color: #1D1B20;
+      font-weight: bold;
+    }
+  }
+}
