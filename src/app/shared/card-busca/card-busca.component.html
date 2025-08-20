@@ -1,13 +1,14 @@
-<mat-card class="card-busca" appearance="outlined">
-
-  <img mat-card-image src="assets/imagens/Veneza.png" alt="Foto de veneza">
+<mat-card class="card-busca">
+  <img mat-card-image
+    [src]="promo.imagem" alt="Imagem de Veneza">
   <mat-card-content>
     <ul>
-      <li>Veneza</li>
-      <li>R$ 500</li>
+      <li> {{ promo.destino }} </li>
+      <li>R$ {{ promo.preco }}</li>
     </ul>
   </mat-card-content>
   <mat-card-actions>
-    <button matButton color="primary">VER DETALHES</button>
+    <button mat-flat-button color="primary">VER DETALHES</button>
   </mat-card-actions>
 </mat-card>
+

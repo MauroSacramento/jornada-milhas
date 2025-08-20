@@ -1,22 +1,25 @@
-.depoimento{
+.depoimento {
   max-width: 320px;
-  display: flex;
-  align-items: start;
-  gap: 1rem;
-  padding: 0.8rem 1rem;
   background-color: #FEF7FF;
-  margin-bottom: 40px;
-
+  border: none;
   img {
-    max-width: 3.5rem;
+    max-width: 56px;
+    max-height: 56px;
+    margin-top: 16px;
   }
-  &.avis{
-    p{
-      color: #49454F;
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
     }
-    span {
-      color: #1D1B20;
-      font-weight: bold;
-    }
+  }
+  mat-card-content {
+    display: flex;
+    align-items: start;
+    gap: 16px;
   }
 }

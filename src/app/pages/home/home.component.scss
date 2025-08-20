@@ -1,19 +1,13 @@
-.wrap-card {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  gap: 1.5rem;
-
+.homepage {
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 16px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
 }
 
-h1{
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 40px;
-  margin-bottom: 20px;
-}
-
-.depoimento-card {
-  display: flex;
-  gap: 1.5rem;
-}

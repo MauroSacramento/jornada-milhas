@@ -1,40 +1,21 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
+.app-header {
 
-.header{
-  background-color: black;
-  color: white;
-  padding-inline: 5rem;
+  button {
+    margin: 0 16px;
+  }
 
-  div {
+  .spacer {
+    flex: 1 1 auto;
+  }
 
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+  .mat-toolbar {
+    background-color: black;
+    color: white;
+    padding: 0 120px;
+  }
 
-    .btn-base{
-      background: none;
-      color: white;
-      border: 0;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-    .btn-bg{
-      padding: .4rem .8rem;
-      background-color: #6750A4;
-      color: white;
-      border-radius: .3rem;
-      border: 0;
-      cursor: pointer;
-    }
-    .btn-bd{
-      padding: .4rem .8rem;
-      background-color: transparent;
-      color: #6750A4;
-      border-radius: .3rem;
-      border: 1px solid #6750A4;
-      cursor: pointer;
-    }
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: white;
   }
 }
+
