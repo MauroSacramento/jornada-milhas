@@ -13,7 +13,7 @@ export class DropdownUfComponent implements OnInit {
 
   @Input() label: string = ''
   @Input() iconePrefix: string = ''
-  @Input() myControl = new FormControl('')
+  @Input() control!: FormControl;
 
   ufList: UnidadeFederativa[] = [];
   options: string[] = []
@@ -32,7 +32,7 @@ export class DropdownUfComponent implements OnInit {
       }
      );
 
-     this.filteredOptions = this.myControl.valueChanges.pipe(
+     this.filteredOptions = this.control.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),
     );

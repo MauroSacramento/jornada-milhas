@@ -12,4 +12,8 @@ import { FormControl } from '@angular/forms';
 export class FormBuscaComponent {
   constructor(public formService: FormBuscaService) {}
 
+  buscar(){
+    console.log(this.formService.formBusca.value)
+  }
+
 }

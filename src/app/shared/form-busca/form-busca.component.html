@@ -1,5 +1,5 @@
 <app-card variant="secondary" class="form-busca">
-  <form [formGroup]="formService.formBusca">
+  <form [formGroup]="formService.formBusca" (ngSubmit)="buscar()">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group aria-label="Tipo de passagem" formControlName="somenteIda">
@@ -14,37 +14,21 @@
       </mat-button-toggle-group>
       <mat-chip (click)="formService.openDialog()">
         <div class="inner">
-          <mat-icon>check</mat-icon> 1 adulto
+          <mat-icon>check</mat-icon> {{ formService.getDescricaoPassageiros() }}
         </div>
       </mat-chip>
       <mat-chip (click)="formService.openDialog()">
         <div class="inner">
-          <mat-icon>check</mat-icon> Econômica
+          <mat-icon>check</mat-icon> {{ formService.formBusca.get('tipo')?.value }}
         </div>
       </mat-chip>
     </div>
     <div class="flex-container">
-      <!-- <mat-form-field class="input-container" appearance="outline">
-        <mat-label>Origem</mat-label>
-        <mat-icon matPrefix>
-          flight_takeoff
-        </mat-icon>
-        <input matInput placeholder="Origem">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field> -->
-      <app-dropdown-uf label="Origem" iconePrefix="flight_takeoff"/>
-      <button mat-icon-button>
+      <app-dropdown-uf label="Origem" iconePrefix="flight_takeoff" [control]="formService.obterControle('origem')"/>
+      <button mat-icon-button (click)="formService.trocarOrigemDestino()">
         <mat-icon>sync_alt</mat-icon>
       </button>
-      <app-dropdown-uf label="Destino" iconePrefix="flight_land"/>
-      <!-- <mat-form-field class="input-container" appearance="outline">
-        <mat-label>Destino</mat-label>
-        <mat-icon matPrefix>
-          flight_land
-        </mat-icon>
-        <input matInput placeholder="Destino">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field> -->
+      <app-dropdown-uf label="Destino" iconePrefix="flight_land" [control]="formService.obterControle('destino')"/>
       <mat-form-field class="input-container" appearance="outline">
         <mat-label>Data de ida</mat-label>
         <input matInput [matDatepicker]="ida">

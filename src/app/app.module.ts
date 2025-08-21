@@ -30,6 +30,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { SelectorPassageiroComponent } from './shared/selector-passageiro/selector-passageiro.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
     FormBuscaComponent,
     ModalComponent,
     BotaoControleComponent,
-    DropdownUfComponent
+    DropdownUfComponent,
+    SelectorPassageiroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <mat-form-field class="input-container" appearance="outline">
   <mat-label> {{ label }} </mat-label>
   <mat-icon matPrefix> {{ iconePrefix }} </mat-icon>
-  <input matInput [matAutocomplete]="auto" [formControl]="myControl"/>
+  <input matInput [matAutocomplete]="auto" [formControl]="control"/>
   <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
 <mat-autocomplete #auto="matAutocomplete">
