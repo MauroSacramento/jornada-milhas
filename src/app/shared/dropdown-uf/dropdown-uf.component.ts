@@ -1,5 +1,5 @@
 import { UnidadeFederativa } from 'src/app/core/types/type';
-import { UnidadeFederativaService } from './../../../core/services/unidade-federativa.service';
+import { UnidadeFederativaService } from '../../core/services/unidade-federativa.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';

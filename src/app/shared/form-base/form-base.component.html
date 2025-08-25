@@ -4,7 +4,7 @@
       <mat-card-title>
         Crie sua conta
       </mat-card-title>
-      <section>
+      <section *ngIf="profilComponent">
         <div class="acoesPerfil">
           <h2>Dados pessoais</h2>
           <button mat-stroked-button color="primary">
@@ -68,8 +68,8 @@
           </div>
         </div>
       </mat-card-content>
-      <mat-divider></mat-divider>
-      <div class="acessoPerfil">
+      <mat-divider *ngIf="profilComponent"></mat-divider>
+      <div *ngIf="profilComponent" class="acessoPerfil">
         <h2>Dados de acesso</h2>
       </div>
       <mat-card-content>
@@ -102,6 +102,7 @@
             </mat-form-field>
           </div>
         </div>
+
         <mat-checkbox formControlName="aceitarTermos" color="primary" class="full-width">Li e aceito os termos e condições deste cadastro *</mat-checkbox>
         <mat-error *ngIf="cadastroForm.get('aceitarTermos')?.invalid && cadastroForm.get('aceitarTermos')?.dirty">
           Você precisa aceitar os termos e condições para efetuar o cadastro
@@ -109,7 +110,7 @@
       </mat-card-content>
       <mat-card-actions class="full-width">
         <button mat-flat-button
-          [disabled]="cadastroForm.invalid"
+          (click)="cadastrar()"
           color="primary"
         >CADASTRAR
         </button>
