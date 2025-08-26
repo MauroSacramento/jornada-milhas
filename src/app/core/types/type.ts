@@ -17,3 +17,15 @@ export interface Depoimento{
   autor: string,
   avatar: string
 }
+
+export interface Cadastro {
+  nome: string,
+  nascimento: string,
+  cpf: string,
+  telefone: string,
+  email: string,
+  senha: string,
+  genero: string,
+  cidade: string,
+  estado: UnidadeFederativa
+}

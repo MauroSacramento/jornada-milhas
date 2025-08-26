@@ -4,8 +4,8 @@
   <input matInput [matAutocomplete]="auto" [formControl]="control"/>
   <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
-<mat-autocomplete #auto="matAutocomplete">
-  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-    {{ option }}
+<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+  <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+    {{ option.nome }}
   </mat-option>
 </mat-autocomplete>

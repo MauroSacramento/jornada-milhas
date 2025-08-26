@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CadastroService } from 'src/app/core/services/cadastro.service';
+import { FormularioService } from 'src/app/core/services/formulario.service';
+import { Cadastro } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,8 +10,24 @@ import { Component } from '@angular/core';
 })
 export class CadastroComponent {
 
+  constructor(
+    private formService: FormularioService,
+    private cadastroService: CadastroService
+  ){}
+
   cadastrar(){
-    console.log("Inforamção do formulário do cadastro!");
+    const formCadastro = this.formService.getCadastro();
+    if(formCadastro?.valid){
+      const novoCadastro = formCadastro.getRawValue() as Cadastro;
+      this.cadastroService.cadastrar(novoCadastro).subscribe({
+        next: (res) => {
+          console.log(res)
+        },
+        error: (err) => {
+          console.log("Erro ao tentar executar a requisição", err);
+        }
+      })
+    }
 
   }
 }
