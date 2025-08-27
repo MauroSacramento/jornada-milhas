@@ -22,8 +22,7 @@ export class TokenService {
     return localStorage.getItem(KEY) ?? '';
   }
 
-  pussuiToken(){
-    return !!this.retornarToken();
+  possuiToken():boolean{
+    return !!this.retornarToken()
   }
-
 }

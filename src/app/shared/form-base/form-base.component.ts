@@ -13,6 +13,8 @@ export class FormBaseComponent implements OnInit{
   cadastroForm!: FormGroup;
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required);
   @Input() profilComponent: boolean = false;
+  @Input() title: string = 'Crie sua conta'
+  @Input() btnText: string = 'CADASTRARS'
   @Output() acaoClick: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(

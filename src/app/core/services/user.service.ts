@@ -9,36 +9,35 @@ import {jwtDecode} from 'jwt-decode';
 })
 export class UserService {
 
-  private userSubject = new BehaviorSubject<Cadastro | null>(null)
+  private userSubject = new BehaviorSubject<Cadastro | null>(null);
 
-  constructor(private tokenService: TokenService) {
-    if(this.tokenService.pussuiToken()){
-      this.decodificarJWT()
+  constructor(private tokenService: TokenService){
+    if(tokenService.possuiToken()){
+      this.decodeJWT()
     }
-   }
+  }
 
-   decodificarJWT(){
-    const token = this.tokenService.retornarToken();
+  decodeJWT(){
+    const token = this.tokenService.retornarToken()
     const user = jwtDecode(token) as Cadastro;
     this.userSubject.next(user)
-   }
+  }
 
-   retornarUser(){
-    return this.userSubject.asObservable();
-   }
+  retornarUser(){
+    this.userSubject.asObservable();
+  }
 
-   salvarToken(token: string){
-    this.tokenService.salvarToken(token);
-    this.decodificarJWT();
-   }
+  salvarToken(token: string){
+    this.tokenService.salvarToken(token)
+    this.decodeJWT()
+  }
 
-   logout(){
-    this.tokenService.excluirToken();
-    this.userSubject.next(null);
-   }
+  logout(){
+    this.tokenService.excluirToken()
+    this.userSubject.next(null)
+  }
 
-   isLogged(){
-    return this.tokenService.pussuiToken();
-   }
-
+  isLogged(){
+    return this.tokenService.possuiToken()
+  }
 }

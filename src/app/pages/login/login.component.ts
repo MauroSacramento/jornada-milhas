@@ -34,11 +34,10 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         console.log(response);
 
-        this.router.navigate(['home']);
+        this.router.navigate(['main']);
       },
       error: (err) => {
-        console.log('Erro no login')
-        this.router.navigate(['home']);
+        alert('Erro no login')
       }
     })
   }
