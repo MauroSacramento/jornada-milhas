@@ -7,7 +7,7 @@
       <section *ngIf="profilComponent">
         <div class="acoesPerfil">
           <h2>Dados pessoais</h2>
-          <button mat-stroked-button color="primary">
+          <button type="button" mat-stroked-button color="primary" (click)="deslogar()">
             <mat-icon>logout</mat-icon>
             DESLOGAR
           </button>
@@ -113,6 +113,7 @@
       <mat-card-actions class="full-width">
         <button mat-flat-button
           [class.perfil-button]="profilComponent"
+          [disabled]="cadastroForm.invalid"
           (click)="cadastrar()"
           color="primary"
         > {{ btnText }}

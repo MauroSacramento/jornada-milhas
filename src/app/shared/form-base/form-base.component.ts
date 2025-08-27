@@ -16,6 +16,7 @@ export class FormBaseComponent implements OnInit{
   @Input() title: string = 'Crie sua conta'
   @Input() btnText: string = 'CADASTRARS'
   @Output() acaoClick: EventEmitter<any> = new EventEmitter<any>()
+  @Output() sair: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,10 +40,22 @@ export class FormBaseComponent implements OnInit{
     });
 
     this.formService.setCadastro(this.cadastroForm);
+
+    if(this.profilComponent){
+      this.cadastroForm.get('aceitarTermos')?.setValidators(null);
+    } else {
+      this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.requiredTrue]);
+    }
+
+    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity()
   }
 
   cadastrar(){
     //Executar função
     this.acaoClick.emit()
+  }
+
+  deslogar(){
+    this.sair.emit()
   }
 }

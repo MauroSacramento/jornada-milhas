@@ -3,6 +3,8 @@
 />
 <app-form-base
   [profilComponent]="true"
-  title="Olá, Sou Mauro"
+  [title]="'Olá, Sou '+ nome"
   btnText="ATUALIZAR"
+  (sair)="deslogar()"
+  (acaoClick)="atualizar()"
   ></app-form-base>
